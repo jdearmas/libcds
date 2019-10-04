@@ -26,7 +26,7 @@ ll_add_node_start(node* current){
 }
 
 void
-ll_delete_node(node* current){
+ll_delete_next_node(node* current){
     node* temp = current->next;
     current->next = current->next->next;
     free(temp);
@@ -37,16 +37,16 @@ ll_delete_this_node(node* head, node* current){
     while ( head->next != current ){
         head = head->next;
     }
-    ll_delete_node(current);
+    ll_delete_next_node(current);
 }
 
 void
-ll_delete_nth_node(node* head, int position){
+ll_delete_middle_node(node* head, int position){
     for( int i = 0; i < position; i++ ){
         if( head->next != NULL )
             head = head->next;
     }
-    ll_delete_node(head);
+    ll_delete_next_node(head);
 }
 
 node*
@@ -72,7 +72,8 @@ ll_display(node* head){
     printf("\n\nList elements are - \n");
     while(temp != NULL)
     {
-        printf("%s --->",temp->data);
+        printf("%s ---> ",temp->data);
         temp = temp->next;
     }
+    printf("NULL\n");
 }

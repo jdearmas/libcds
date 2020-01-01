@@ -1,0 +1,32 @@
+Abstract
+--------
+libcds is a minimalistic data structures library written in C.
+
+// high-level descriptions
+// list all data structures
+
+Installation
+------------
+Edit config.mk to match your local setup. libcds is installed into
+/usr/lib by default.
+
+Afterwards enter the following command to build and install libcds (if
+necessary as root):
+
+    $ make clean install
+
+
+Running libcds
+------------
+Simply use an '#include' directive in the C source file you wish to use the library:
+
+    $ #include "libcds.h"
+
+
+Configuration
+-------------
+No configuration is needed.
+
+
+Changelog
+---------
